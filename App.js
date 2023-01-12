@@ -11,7 +11,7 @@ msg = msg + " " + nut.toString();
 //The main functions going on
 var express = require("express");
 var app = express();
-var local = 3000;
+var port = process.env.port || 3000;
 //var path = require("path");
 
 //setup a route for static files
@@ -27,7 +27,7 @@ app.get("/home", function(req,res){
     res.send("This is the home page.");
 });
 
-app.listen(local, function(){
+app.listen(port, function(){
     console.log("Running on localhost: " + local)
 });
 
